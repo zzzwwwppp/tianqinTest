@@ -1,0 +1,320 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+    border: none;
+    width: 1518px;
+}
+
+body,p,ul,li,h2,img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+}
+
+p {
+    text-align: left;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo {
+    width: 100px;
+    height: 20px;
+    background-color: red;
+    color: white;
+}
+
+/* 顶部 */
+.header {
+    position: relative;
+    height: 60px;
+    background-color: white;
+}
+
+.header .logo {
+    float: left;
+    position: absolute;
+    left: 200px;
+    top: 20px;
+}
+
+.login_out {
+    width: 100px;
+    height: 30px;
+    background-color: red;
+    margin-left: 10px;
+    color: white;
+    float: left;
+    line-height:30px;
+   
+}
+
+.style_icon {
+    position: absolute;
+    right: 200px;
+    top: 15px;
+}
+
+.style_icon li {
+    margin-right: 10px;
+    float: left;
+    position: relative;
+    top: 5px;
+}
+
+/* 主体 */
+.content {
+    height: 1200px;
+    background-color: #f5f8f9;
+    position: relative;
+}
+
+.one {
+    height: 125px;
+    width: auto;
+    position: relative;
+}
+
+.one_left {
+    float: left;
+    position: absolute;
+    left: 200px;
+    top: 50px;
+}
+
+.one_right {
+    float: right;
+    position: absolute;
+    right: 200px;
+    top: 50px;
+}
+
+.one_right nav a {
+    width: 100px;
+    font-size: 15px;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-right: 20px;
+    border-bottom: 2px solid transparent;
+}
+
+.line {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    height: 2px;
+    width: 90px;
+    background-color: black;
+    transition: all .3s;
+}
+
+.two {
+    position: relative;
+    width: auto;
+    height:325px;
+}
+
+.two_left {
+    height: 300px;
+    width: 550px;
+    background-color: white;
+    position: absolute;
+    left: 200px;
+    top: 10px;
+    float: left;
+}
+
+.two_right {
+    height: 300px;
+    width: 550px;
+    position: absolute;
+    right: 200px;
+    top: 10px;
+    float: right;
+
+}
+
+.two_left .toggle button {
+    margin-right: 12px;
+    width: 28px;
+    height: 28px;
+    appearance: none;
+    border: none;
+    background: rgba(255, 255, 255);
+    color: black;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+.toggle .prev {
+    position: absolute;
+    top: 150px;
+    left: 10px;
+}
+
+.toggle .next {
+    position: absolute;
+    top: 150px;
+    right: 0px;
+}
+
+.point {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    right: 40%;
+  }
+
+.point li {
+    width: 8px;
+    height: 8px;
+    margin: 4px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+.point li.active {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+}
+
+.top {
+    position: relative;
+    height: 100px;
+    width: 550px;
+    background-color: white;
+}
+
+.support {
+    float: left;
+    position: absolute;
+    top:35px;
+    left: 35px;
+}
+
+.viewall {   
+    height: 40px;
+    width: 100px;
+    float: right;
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    border: #e9e9ea 3px outset;
+}
+
+.viewall a{
+    display: inline-block;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 10px 19px 10px 19.5px;
+}
+
+.bottom {
+    height: 195px;
+    width: 550px;
+    background-color: white;
+    position: absolute;
+    top: 105px;
+}
+
+.time {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+}
+
+.time td {
+    text-align: left;
+    width: 120px;
+    height: 40px;
+}
+
+.status {
+    background-color: #5dd054;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    width: 80px;
+    height: 30px;
+}
+
+
+.three {
+    width: 1120px;
+    height: 300px;
+    background-color: white;
+    position: relative;
+    left: 200px;
+}
+
+.four {
+    position: relative;
+    width: auto;
+}
+
+.four_left {
+    height: 400px;
+    width: 550px;
+    background-color: white;
+    position: absolute;
+    left: 200px;
+    top: 10px;
+    float: left;
+}
+
+.four_right {
+    height: 400px;
+    width: 550px;
+    background-color: white;
+    position: absolute;
+    right: 200px;
+    top: 10px;
+    float: right;
+}
+
+
+
+/* 底部 */
+.footer {
+    position: relative;
+    height: 200px;
+    width: auto;
+    margin: auto;  
+    background-color: black;
+}
+
+.tab {
+    position: absolute;
+    float: left;
+    left: 400px;
+    top: 50px;
+}
+
+.footer .logo{
+    float: left;
+    position: absolute;
+    left: 200px;
+    top: 50px;
+}
+
+.tab td {
+    font-size: 15px;
+    color: white;
+    width: 150px;
+    height: 15px;
+    text-align: left;
+}
+

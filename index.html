@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <script type="text/javascript" src="js/echarts.js"></script>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <div class="header">
+        <div class="wrapper">
+            <div class="logo">LOGO</div>
+            <ul class="style_icon">
+                <li><a href="#"><img src="images/icons8-设置-24.png"></a></li>
+                <li><a href="#"><img src="images/icons8-门铃-24.png"></a></li>
+                <div class="login_out">Log Out</div>
+            </ul>
+        </div> 
+    </div>
+    <!-- 主体部分 -->
+    <div class="content">
+        <div class="wrapper">
+            <div class="one">
+                <div class="one_left">
+                    <p><h2>Audience Overview</h2></p>
+                    <p>Roseville,CA</p>
+                </div>
+                <div class="one_right">
+                    <nav>
+                        <a href="javascript:;" class="selected" data-index="1">DASHBOARD</a>
+                        <a href="javascript:;" data-index="2">PROJECTS</a>
+                        <a href="javascript:;" data-index="3">CALENDAR</a>
+                        <a href="javascript:;" data-index="4">MAILBOX</a>
+                        <a href="javascript:;" data-index="5">SETTINGS</a>
+                        <div class="line"></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="two">
+                <div class="two_left">
+                    <div class="slider-wrapper">
+                        <img src="images/slider01.jpg" alt="">
+                    </div>
+                    <div class="toggle">
+                        <button class="prev">&lt;</button>
+                        <button class="next">&gt;</button>
+                    </div>
+                    <div>
+                        <ul class="point">
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div class="two_right">
+                    <div class="top">
+                        <div class="support"><h2>Support Requestss</h2></div>
+                        <div class="viewall">
+                            <a href="javascript:;">View All</a>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="time">
+                            <table>
+                                <tr>
+                                    <td>TIME</td>
+                                    <td>USER NAME</td>
+                                    <td>&ensp;</td>
+                                    <td>Status</td>
+                                </tr>
+                                <tr>
+                                    <td>9:45pm</td>
+                                    <td>wr@design.com</td>
+                                    <td>&ensp;</td>
+                                    <td><a class="status" href="javascript:;">Salved</a></td>
+                                </tr>
+                                <tr>
+                                    <td>9:45pm</td>
+                                    <td>wr@design.com</td>
+                                    <td>&ensp;</td>
+                                    <td><a class="status" href="javascript:;">Salved</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="three"></div>
+            <div class="four">
+                <div class="four_left"></div>
+                <div class="four_right"></div>
+            </div>
+        </div>  
+    </div>
+    <!-- 底部 -->
+    <div class="footer">
+        <div class="wrapper">
+            <div class="logo">LOGO</div>
+            <div class="tab">
+                <table>
+                    <tr>
+                        <td>NEWS</td>
+                        <td>SPORT</td>
+                        <td>WEATHER</td>
+                        <td>FUTURE</td>
+                        <td>TRAVEL</td>
+                    </tr>
+                    <tr>
+                        <td>CHANNELS</td>
+                        <td>CULTURE</td>
+                        <td>AUTOS</td>
+                        <td>FOOD</td>
+                        <td colspan="3">RADIO</td>
+                    </tr>
+                    <tr>
+                        <td>OVERVIEW</td>
+                        <td>NATURE</td>
+                        <td>LOCAL</td>
+                        <td>EARTH</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>THELINE</td>
+                        <td>MUSIC</td>
+                        <td>SHOP</td>
+                        <td>TV</td>
+                        <td></td>             
+                    </tr>
+            </table>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        (function (){
+            const nav = document.querySelector('.one_right')
+            const line = document.querySelector('.line')
+            nav.addEventListener('mouseover', function(e){
+               let len = 127 * (e.target.dataset.index - 1)
+               line.style.left = len + 'px'
+            })
+            nav.addEventListener('mouseleave', function(){
+                const selected = document.querySelector('.one_right .selected')
+                let len = 127 * (selected.dataset.index - 1)
+                line.style.left = len + 'px'
+            })
+            nav.addEventListener('click', function(e){
+                document.querySelector('.one_right .selected').classList.remove('selected')
+                e.target.classList.add('selected')
+
+            })
+        }());
+        
+        (function (){
+            const img = document.querySelector('.slider-wrapper img')
+            const next = document.querySelector('.next')
+            const prev = document.querySelector('.prev')
+
+            let i = 0
+            next.addEventListener('click', function(){
+                i++
+                i = i >= 5 ? 0 : i
+                img.src = `images/slider0${i+1}.jpg`
+                document.querySelector('.point .active').classList.remove('active')
+                document.querySelector(`.point li:nth-child(${i+1})`).classList.add('active')
+            })
+            prev.addEventListener('click',function(){
+                i--
+                i = i < 0 ? 4 : i
+                img.src = `images/slider0${i+1}.jpg`
+                document.querySelector('.point .active').classList.remove('active')
+                document.querySelector(`.point li:nth-child(${i+1})`).classList.add('active')
+            })
+
+            let timerId = setInterval(function(){
+                next.click()
+            },1000)
+
+            const box = document.querySelector('.two_left')
+            box.addEventListener('mouseenter', function(){
+                clearInterval(timerId)
+            })
+            box.addEventListener('mouseleave', function(){
+                timerId = setInterval(function(){
+                    next.click()
+                },1000)
+            })
+        }());   
+
+        function createXHR () {
+            let XHR = [
+                function () { return new XMLHttpRequest () },
+                function () { return new ActiveXObject ("Msxml2.XMLHTTP") },
+                function () { return new ActiveXObject ("Msxml3.XMLHTTP") },
+                function () { return new ActiveXObject ("Microsoft.XMLHTTP") }
+            ]
+            let xhr = null
+            for (let i = 0; i < XHR.length; i ++) {
+                try {
+                    xhr = XHR[i]()
+                } catch(e) {
+                    continue
+                }
+                break
+            }
+            return xhr
+        }
+        let xhr1 = createXHR()
+        xhr1.open('GET','https://edu.telking.com/api/?type=month',false)
+        xhr1.send(null)
+        wave_data = JSON.parse(xhr1.responseText)
+
+        const {data: {series, xAxis}} = wave_data
+
+        var myChart1 = echarts.init(document.querySelector('.three'))
+        var option1 = {
+            title: {
+                text: '曲线图数据展示',
+                left: 'center',
+                top: '10px',
+            },
+            xAxis: {
+                type: 'category',
+                data: xAxis
+            },
+            yAxis: {
+                type: 'value',
+                axisLabel: {
+                    formatter: '{value} 人'
+                }
+            },
+           
+            series: [
+                {
+                data: series,
+                type: 'line',
+                smooth: true ,
+                lineStyle: {
+                    color: '#87CEEB'
+                },
+                itemStyle:{
+                    normal:{
+                        color: 'blue',
+                        label : {
+                        color: 'blue',
+                        show: true,
+                        formatter: 
+                            function(parms){
+                                // console.log(parms);
+                                if ((parms.dataIndex % 2 == 0)){
+                                    return `${parms.value}`
+                                } else {
+                                    return ' '
+                                }
+                            }
+                        }
+                    }
+                },
+                areaStyle: {
+                    color: {
+                        type: 'linear',
+						x: 0,
+						y: 0,
+						x2: 0,
+						y2: 1,
+						colorStops: [{
+							offset: 0, color: 'blue'
+						}, {
+							offset: 1, color: 'white'
+						}],
+						global: false
+                    },
+                }
+            }
+            ]
+        }
+        myChart1.setOption(option1)
+
+        let xhr2 = createXHR()
+        xhr2.open('GET','https://edu.telking.com/api/?type=week',false)
+        xhr2.send(null)
+        pie_bar_data = JSON.parse(xhr2.responseText)
+        
+        const {data: {xAxis:xAxis2,series:series2}} = pie_bar_data
+ 
+        let data_pie = []
+        for (let i = 0;i <= xAxis2.length-1; i++){
+            aa = {value:series2[i] ,name:xAxis2[i]}
+            data_pie.push(aa)
+        }
+        var myChart2 = echarts.init(document.querySelector('.four_left'))
+        var option2 = {
+            title: {
+                text: '饼状图数据展示',
+                left: 'center',
+                top: '20px',
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            series: [
+                {
+                name: '人数',
+                type: 'pie',
+                radius: '50%',
+                data: data_pie,
+                emphasis: {
+                    itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+                }
+            ]
+            }
+            myChart2.setOption(option2)
+
+            var myChart3 = echarts.init(document.querySelector('.four_right'))
+            var option3 = {
+                title: {
+                    text: '柱状图数据展示',
+                    left: 'center',
+                    top: '20px',
+                },
+                xAxis: {
+                    type: 'category',
+                    data: xAxis2
+                },
+                yAxis: {
+                    type: 'value',
+                    name: '商品数'
+                },
+                series: [
+                    {
+                    data: series2,
+                    type: 'bar',
+                    barWidth: 20
+                    }
+                ]
+            }
+            myChart3.setOption(option3)
+
+    </script>
+</body>
+</html>
